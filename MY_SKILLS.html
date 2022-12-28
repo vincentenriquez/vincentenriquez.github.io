@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MY SKILLS</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: Century Gothic;
+		}
+		body {
+			width: 100%;
+			min-height: 100vh;
+			background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.myskills {
+			width: 80%;
+			min-height: 80vh;
+			padding: 30px 10%;
+			position: absolute;
+			top: 10%;
+		}
+		.myskills .main {
+			max-width: 700px;
+			margin: 0px auto;
+			text-align: center;
+			font-family: helvetica;
+		}
+		.myskills .main h1 {
+			position: relative;
+			font-size: 40px;
+			color: lightcyan;
+			margin-bottom: 30px;
+			display: inline-block;
+		}
+		.myskills .main h1::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			top: 125%;
+			left: 0;
+			background-color: #808080;
+		}
+		.myskills .main h1::after {
+			content: '';
+			position: absolute;
+			width: 50%;
+			height: 3px;
+			background-color: #d03645;
+			top: calc(125% - 1px);
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.main p {
+			color: yellow;
+		}
+		.myskills .skillsrow {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 70px;
+		}
+		.skillsrow .col {
+			flex-basis: 46%;
+		}
+		.skillsrow .sub-title h2 {
+			position: relative;
+			color: lightcyan;
+			font-size: 22px;
+			font-family: helvetica;
+			margin-bottom: 30px;
+		}
+		.skillsrow .sub-title h2::before {
+			content: '';
+			position: absolute;
+			width: 50%;
+			height: 1px;
+			top: 125%;
+			left: 0;
+			background-color: #808080;
+		}
+		.skillsrow .sub-title h2::after {
+			content: '';
+			position: absolute;
+			width: 25%;
+			height: 3px;
+			top: calc(125% - 1px);
+			left: 0;
+			background-color: #d03645;
+		}
+		.subject {
+			font-size: 18px;
+			font-weight: thin;
+			color: black;
+			padding-bottom: 15px;
+			text-transform: uppercase;
+		}
+		.progress-bar {
+			position: relative;
+			width: 100%;
+			height: 5px;
+			background-color: #808080;
+			border-radius: 15px;
+			margin-bottom: 20px;
+		}
+		.progress-bar::after {
+			position: absolute;
+			content: attr(value);
+			top: -35px;
+			right: 0;
+			color: lightcyan;
+			font-size: 18px;
+		}
+		.progress-line {
+			position: absolute;
+			width: 0%;
+			height: 7px;
+			background-color: #d03645;
+			border-radius: 15px;
+			top: -1px;
+			animation: animate 1.5s cubic-bezier(1, 0.2, 0.2, 1) forwards;
+		}
+		@keyframes animate {
+			100% {
+				width: 100%;
+			}
+		}
+		.progress-line::after {
+			content: '';
+			position: absolute;
+			width: 13px;
+			height: 13px;
+			border-radius: 50%;
+			top: 50%;
+			left: 100%;
+			transform: translate(-50%, -50%);
+			background-color: #d03645;
+		}
+		@media(max-width: 768px) {
+			.myskills {
+				padding: 30px 8%;
+			}
+		}
+		@media(max-width: 568px) {
+			.myskills .skillsrow {
+				flex-direction: column;
+			}
+			.myskills .main h1 {
+				font-size: 36px;
+			}
+			.myskills .skillsrow {
+				margin-top: 30px;
+			}
+			.skillsrow .col:nth-child(2) {
+				margin-top: 20px;
+			}
+		}
+		ul {
+			list-style-type: none;
+			float: right;
+			margin-top: 25px;
+			margin-right: 25px;
+		}
+
+		ul li {
+			display: inline-block;
+		}
+
+		ul li a {
+			text-decoration: none;
+			color: cyan;
+			margin: 0px 4px;
+			padding: 5px 15px;
+			border: 1px solid transparent;
+			transition: 0.8s ease;
+		}
+
+		ul li a:hover {
+			border-top: 2px solid cyan;
+			border-bottom: 2px solid cyan;
+			color: lightpink;
+		}
+
+		ul li.active a{
+			background-color: cyan;
+			color: deeppink;
+    	}
+    	h1 {
+    		color: white;
+    		font-size: 2533333px;
+    		font-weight: bold;
+    		font-family: monospace;
+    		letter-spacing: 11px;
+    		animation: typewriter 2.1s steps(9) normal;
+    		white-space: nowrap;
+    		overflow: hidden;
+    	}
+    	@keyframes typewriter {
+    		from {
+    			width: 0;
+    		}
+    		to {
+    			width: 299px;
+    		}
+    	}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="main">
+			<ul>
+				<li><a href="MY_WEBSITE.html">HOME</a></li>
+				<li><a href="ABOUT_ME.html">ABOUT ME</a></li>
+				<li><a href="MY_FAMILY.html">MY FAMILY</a></li>
+				<li class="active"><a href="MY_SKILLS.html">MY SKILLS</a></li>
+				<li><a href="MY_CAREER.html">MY CAREER</a></li>
+			</ul>
+		</div>
+	</header>
+	<div class="myskills">
+		<div class="main">
+			<h1>MY SKILLS</h1>
+			<p>"When love and skill work together, expect a masterpiece." - John Ruskin</p>
+		</div>
+		<div class="skillsrow">
+			<section class="col">
+				<div class="sub-title">
+					<h2>HARD SKILLS</h2>
+				</div>
+				<div class="myskills-container">
+
+					<div class="skill">
+						<div class="subject">Computer Skills</div>
+						<div class="progress-bar" value="89%">
+							<div class="progress-line" style="max-width: 89%;"></div>
+						</div>
+					</div>
+
+					<div class="skill">
+						<div class="subject">Programming Skills</div>
+						<div class="progress-bar" value="91%">
+							<div class="progress-line" style="max-width: 91%;"></div>
+						</div>
+					</div>
+
+					<div class="skill">
+						<div class="subject">Troubleshooting</div>
+						<div class="progress-bar" value="88%">
+							<div class="progress-line" style="max-width: 88%;"></div>
+						</div>
+					</div>
+
+					<div class="skill">
+						<div class="subject">Editing Skills</div>
+						<div class="progress-bar" value="88%">
+							<div class="progress-line" style="max-width: 88%;"></div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="col">
+				<div class="sub-title">
+					<h2>SOFT SKILLS</h2>
+				</div>
+				<div class="myskills-container">
+
+					<div class="skill">
+						<div class="subject">Problem-solving</div>
+						<div class="progress-bar" value="95%">
+							<div class="progress-line" style="max-width: 95%;"></div>
+						</div>
+					</div>
+
+					<div class="skill">
+						<div class="subject">Time Management</div>
+						<div class="progress-bar" value="90%">
+							<div class="progress-line" style="max-width: 90%;"></div>
+						</div>
+					</div>
+
+					<div class="skill">
+						<div class="subject">Teamwork</div>
+						<div class="progress-bar" value="89%">
+							<div class="progress-line" style="max-width: 89%;"></div>
+						</div>
+					</div>
+
+					<div class="skill">
+						<div class="subject">Communication</div>
+						<div class="progress-bar" value="85%">
+							<div class="progress-line" style="max-width: 85%;"></div>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
