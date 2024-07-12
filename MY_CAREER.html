@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<title>MY CAREER</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			text-decoration: none;
+			font-family: 'Arial', sans-serif;
+		}
+		body {
+			background-color: #0f0e17;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			margin-top: 4rem;
+			-webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+		}
+		/* Navigation Bar Styles */
+		nav {
+            background-color: #ff8906;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li.active a {
+            background-color: #0f0e17; 
+            color: #ff8906; 
+        }
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: #0f0e17;
+            color: #ff8906;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
+        /* Responsive Styles */
+        @media screen and (max-width: 877px) {
+            .menu-icon {
+                display: block;
+                text-align: center;
+                place-content: center;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #ff8906;
+                padding: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: -1;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+            nav ul li a {
+                padding: 15px 10px;
+                width: 100%;
+            }
+            h1, h3 {
+              padding: 1rem;
+            }
+			.container {
+				flex-direction: column;
+			}
+        }
+		.container {
+			width: 100%;
+			padding: 20px;
+			display: flex;
+			column-gap: 10rem;
+			justify-content: center;
+		}
+		.first, .second {
+			padding: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			row-gap: 1rem;
+		}
+		.first img, .second img {
+			max-width: 100%;
+			height: auto;
+			max-height: 300px;
+		}
+		.header p {
+			font-size: 2rem;
+			font-weight: 900;
+			color: #fffffe;
+			text-align: center;
+		}
+		.bball p, .computer p {
+			font-size: 26px;
+			width: 100%;
+			max-width: 650px;
+			text-align: justify;
+			color: #a7a9be;
+		}
+		.header-web {
+			margin-top: 2.5rem;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 4rem;
+			color: #242426;
+			text-align: center;
+			outline: none;
+			animation: animate 5s linear infinite;
+		}
+		@keyframes animate {
+			0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+				color: #242426;
+				box-shadow: none;
+			}
+			18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+				color: #fff;
+				text-shadow: 0 0 10px #242426,
+				0 0 20px #242426,
+				0 0 40px #242426,
+				0 0 80px #242426,
+				0 0 160px #242426;		
+			}
+		}
+		@media screen and (max-width: 1130px) {
+			.bball p, .computer p {
+				font-size: 20px;
+			}
+			.container {
+				column-gap: 5rem;
+			}
+		}
+		@media screen and (max-width: 500px) {
+			.bball p, .computer p {
+				font-size: 15px;
+			}
+		}
+		@media screen and (max-width: 300px) {
+			.bball p, .computer p {
+				font-size: 10px;
+			}
+			.header p {
+				font-size: 1rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav>
+        <div class="logo">Singk3t.</div>
+        <i class="fas fa-bars menu-icon"></i>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="ABOUT_ME.html">ABOUT ME</a></li>
+            <li><a href="MY_FAMILY.html">MY FAMILY</a></li>
+            <li><a href="MY_SKILLS.html">MY SKILLS</a></li>
+            <li class="active"><a href="MY_CAREER.html">MY CAREER</a></li>
+        </ul>
+    </nav>
+	<div class="header-web">
+		<p>MY POTENTIAL PROFESSION</p>
+	</div>
+	<div class="container">
+		<div class="first">
+			<img src="mj.jpg" alt="" srcset="">
+			<div class="header">
+				<p>Professional Basketball Player</p>
+			</div>
+			<div class="bball">
+				<p style="text-indent: 50px;">For me, being a professional basketball player may be a highly satisfying and fulfilling career. When I were younger, I definitely acquired a strong interest in basketball. The joy of playing, the brotherhood of being a member of a team, and the prospect of one day performing at the greatest level must have been exciting. I often want for my family to be able to witness my game on television or live in an arena. Being able to share my success and make my loved ones proud is an excellent motivator. The tie between a child and their parent is one of the most significant partnerships, and for me, earning my father's pride with my hard work and accomplishments in basketball would be extremely meaningful.</p>
+			</div>
+		</div>
+		<div class="second">
+			<img src="IT.jpeg" alt="" srcset="">
+			<div class="header">
+				<p>Technician</p>
+			</div>
+			<div class="computer">
+				<p style="text-indent: 50px;">When I was younger, I developed a significant interest and talent for dealing with electrical and software components. The enjoyment of playing with gadgets such as telephones and computers, as well as the desire to troubleshoot and fix problems, are characteristics that define a great IT worker. My hands-on experimenting, which began when I was young, has laid a solid foundation for the technical skills required in the information technology area. For me, being able to examine and comprehend the inner workings of various technologies, as well as not giving up until an issue is solved, are vital assets. This passion and persistence will be help me as I strive to advance my knowledge.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+	const menuIcon = document.querySelector('.menu-icon');
+	const navUl = document.querySelector('nav ul');
+
+	menuIcon.addEventListener('click', () => {
+		navUl.classList.toggle('active');
+		menuIcon.classList.toggle('fa-times');
+		menuIcon.classList.toggle('fa-bars');
+	});
+</script>

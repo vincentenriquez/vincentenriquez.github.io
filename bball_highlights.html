@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>My Highlights</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0f0e17;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            align-items: flex-start;
+            padding: 5px 5%;
+        }
+        .container .main-video {
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .container .main-video video {
+           width: 100%;
+           border-radius: 5px; 
+        }
+        .container .main-video .video-title {
+            color: white;
+            font-size: 23px;
+            padding: 15px 0 15px 0;
+        }
+        .container .video-list {
+            border-radius: 5px;
+            height: 520px;
+            padding: 10px;
+        }
+        .container .video-list .vid video {
+            width: 100px;
+            border-radius: 5px;
+        }
+        .container .video-list .vid {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .container .video-list .vid:hover {
+            background-color: #ff8906;
+        }
+        .container .video-list .vid.active {
+            background-color: #fffffe;
+        }
+        .container .video-list .vid.active .video-title {
+            color: black;
+        }
+        .container .video-list .vid .video-title {
+            color: white;
+            font-size: 17px;
+        }
+        h1 {
+            padding: 20px;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #fffffe;
+        }
+        .fa-arrow-left {
+            font-size: 2rem;
+            color: cyan;
+            width: 100%;
+            padding: 1rem;
+            cursor: pointer;
+        }
+        .right-side video {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+        }
+        .header {
+            text-align: center;
+            color: #fffffe;
+        }
+        .video-info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        .right, .left {
+            display: flex;
+            flex-direction: row;
+        }
+        .left {
+            gap: 5px;
+        }
+        .top {
+            flex-direction: row;
+            display: flex;
+            justify-content: space-between;
+        }
+        .channel-info {
+            margin-left: 10px;
+        }
+        .channel-name {
+            font-size: 20px;
+            color: #fffffe;
+        }
+        .channel-subs {
+            color: #a7a9be;
+            font-size: 15px;
+        }
+        .subs-btn {
+            margin-left: 20px;
+            background-color: #fffffe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .subs-btn a {
+            color: black;
+            font-size: 15px;
+        }
+        .profile {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 50px;
+            background-color: greenyellow;
+        }
+        .like-N-dislike {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            width: 130px;
+            height: auto;
+            color: #fffffe;
+            background-color: rgb(60, 60, 60);
+            gap: 10px;
+            border-radius: 50px;
+            font-size: 15px;
+        }
+        .fa-thumbs-up, .fa-thumbs-down{
+            font-size: 15px;
+        }
+        .middle-line {
+            width: 2px;
+            height: 1.5rem;
+            background-color: #fffffe;
+        }
+        .like {
+            display: flex;
+            gap: 7px;
+            cursor: pointer;
+        }
+        .share {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(60, 60, 60);
+            color: #fffffe;
+            padding: 8px;
+            border-radius: 50px;
+            gap: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .download {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(60, 60, 60);
+            color: #fffffe;
+            padding: 8px;
+            border-radius: 50px;
+            gap: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .bottom {
+            background-color: rgb(60, 60, 60);
+            color: #fffffe;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .profile-info {
+            display: flex;
+        }
+        @media (max-width: 991px) {
+            .container {
+                grid-template-columns: 1.5fr 1fr;
+                padding: 10px;
+            }
+            .top {
+                flex-direction: column;
+                row-gap: 10px;
+            }
+            .right {
+                justify-content: space-between;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .channel-name {
+                font-size: 17px;
+            }
+            .channel-subs {
+                font-size: 13px;
+            }
+            .left {
+                justify-content: space-evenly;
+            }
+            .video-info {
+                flex-direction: column-reverse;
+            }
+        }
+        @media (max-width: 470px) {
+            .profile {
+                font-size: 12px;
+                width: 30px;
+                height: 30px;
+            }
+            .profile-info .channel-info .channel-name {
+                font-size: 11.5px;
+            }
+            .profile-info .channel-info .channel-subs {
+                font-size: 9.5px;
+            }
+            .subs-btn a, .like-N-dislike, .share, .download, .bottom {
+                font-size: 11.5px;
+            }
+            .like-N-dislike {
+                gap: 7px;
+            }
+            .container .main-video .video-title {
+                font-size: 20px;
+            }
+            .subs-btn {
+                padding: 7px;
+                margin-left: 0px;
+            }
+            .container .video-list .vid .video-title {
+                font-size: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <i class="fas fa-arrow-left" onclick="goBack()"></i>
+    <h1>MY HIGHLIGHTS</h1>
+    <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <video src="highlight1.mp4" controls muted autoplay></video>
+                <h3 class="video-title">Highlight in Palatiw League</h3>
+                <div class="video-info">
+                    <div class="top">
+                        <div class="right">
+                            <div class="profile-info">
+                                <div class="profile">V</div>
+                                <div class="channel-info">
+                                    <p class="channel-name">Vincent Lawrence F. Enriquez</p>
+                                    <p class="channel-subs">12M subscribers</p>
+                                </div>
+                            </div>
+                            <div class="subs-btn"><a href="">Subscribe</a></div>
+                        </div>
+                        <div class="left">
+                            <div class="like-N-dislike">
+                                <div class="like">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <div>147K</div>
+                                </div>
+                                <div class="middle-line"></div>
+                                <i class="fas fa-thumbs-down"></i>
+                            </div>
+                            <div class="share">
+                                <i class="fas fa-share"></i>
+                                <p>Share</p>
+                            </div>
+                            <div class="download">
+                                <i class="fas fa-download"></i>
+                                <p>Download</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <p>5,565,900 views Oct 29, #1 on Trending</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-list">
+            <div class="header">
+                <h2>My Best Highlights</h2>
+                <p id="highlight-count">Singk3t. - 1/4</p>
+            </div>
+            <div class="vid active">
+                <video src="highlight1.mp4" muted></video>
+                <h3 class="video-title">Highlight in San Miguel Court (Schedule)</h3>
+            </div>
+            <div class="vid">
+                <video src="highlight2.mp4" muted></video>
+                <h3 class="video-title">Highlight in San Miguel Court (Schedule)</h3>
+            </div>
+            <div class="vid">
+                <video src="highlight3.mp4" muted></video>
+                <h3 class="video-title">Highlight in San Miguel Court (Schedule)</h3>
+            </div>
+            <div class="vid">
+                <video src="highlight4.mp4" muted></video>
+                <h3 class="video-title">Highlight in San Miguel Court (Schedule)</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        let listVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .video-title');
+        let highlightCount = document.getElementById('highlight-count');
+
+        listVideo.forEach((video, index) => {
+            video.onclick = () => {
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active')) {
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = video.children[1].innerHTML;
+                    title.innerHTML = text;
+                    // Update the highlight count
+                    highlightCount.innerHTML = `Singk3t. - ${index + 1}/4`;
+                }
+            }
+        });
+    </script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

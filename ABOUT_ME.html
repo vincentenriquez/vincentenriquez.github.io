@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="about_me.css"> <!-- Ensure your CSS file is linked properly -->
+    <title>About Me</title>
+    <style>
+        /* Prevent text selection */
+        body {
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo" onclick="index()">Singk3t.</div>
+        <i class="fas fa-bars menu-icon"></i>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li class="active"><a href="about_me.html">ABOUT ME</a></li>
+            <li><a href="my_family.html">MY FAMILY</a></li>
+            <li><a href="my_skills.html">MY SKILLS</a></li>
+            <li><a href="my_career.html">MY CAREER</a></li>
+        </ul>
+    </nav>
+    <div class="about">
+        <div class="main1">
+            <!-- Image with protected right-click -->
+            <img src="youngvincent.jpg" class="yv no-right-click" alt="Young Vincent">
+            <div class="intro" id="intro">
+                <p style="text-indent: 50px;">
+                    I live in San Miguel, Pasig City. I turned 20 years old last December 14, 2024. I graduated from Rizal High School, taking the ICT strand. As an achiever student, I was an honor student when I left Rizal High School. I am currently a second-year college student at Pamantasan ng Lungsod ng Pasig, taking up a Bachelor of Science in Information Technology. As a student I have dreams and passions, I like to be a Professional Basketball Player or to be a Technician, have a great family and be a successful person in the future.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="exp">
+        <div class="header">MY EXPERIENCE IN CODING</div>
+        <div class="main4">
+            <div class="testimonial-container" id="testimonial-container">
+                <!-- Testimonial will be dynamically inserted here -->
+            </div>
+			<div style="display: flex; justify-self: center;gap: 20px;">
+				<button id="prev">&lt;</button>
+				<button id="next">&gt;</button>
+			</div>
+        </div>
+    </div>
+	<div class="sporty">
+		<div class="main5">
+			<img src="bball3.jpg" id="hover-image" class="yv no-right-click" data-hover-text="Click to see more" onclick="bball()">
+			<div class="hover-text" id="hoverText"></div>
+			<div class="intro2" id="intro2">
+				<p style="text-indent: 50px;">
+					I'm a passionate basketball player who enjoys the intense excitement and teamwork of the game. My father taught me the basic rules of basketball at an early age and led me to the court to learn strategy. My father's love of the sport pushed me to find my own deep interest for basketball, which continued with him into adulthood. On weekends, you can often find me at the local gym or court, where I practices my dribbling skills and scrimmages with my father. I am an avid NBA and PBA fan who owns jerseys from my favorite players. When I'm not playing basketball, I enjoy staying active by participating in other sports such as volleyball and badminton to keep my athleticism sharp. Basketball is my actual passion, and I aims to one day join an adult fun league to satisfy my competitive side.
+				</p>
+			</div>
+		</div>
+	</div>
+    <div class="myhobbies">
+		<div class="header">MY HOBBIES</div>
+        <div class="main2">
+            <div class="image-container">
+                <!-- Sunset image with protected right-click -->
+                <img src="gandamo.jpg" class="sunset no-right-click" alt="SUNSET">
+                <div class="content">
+                    <h2>TAKING PICTURE OF SUNSET</h2>
+                </div>
+            </div>
+			<div class="image-container">
+                <!-- Sunset image with protected right-click -->
+                <img src="1718717864315.jpg" class="sunset no-right-click" alt="SUNSET">
+                <div class="content">
+                    <h2>TAKING PICTURE OF SUNRISE</h2>
+                </div>
+            </div>
+            <div class="image-container">
+                <!-- Basketball image with protected right-click -->
+                <img src="bball.jpg" class="playingbball no-right-click" alt="PLAYING BASKETBALL">
+                <div class="content">
+                    <h2>PLAYING BASKETBALL</h2>
+                </div>
+            </div>
+            <div class="image-container">
+                <!-- PBA image with protected right-click -->
+                <img src="live1.jpg" class="yv no-right-click" alt="WATCHING PBA LIVE">
+                <div class="content">
+                    <h2>WATCHING PBA GAMES LIVE</h2>
+                </div>
+            </div>
+			<div class="image-container">
+                <!-- PBA image with protected right-click -->
+                <img src="nba.png" class="yv no-right-click" alt="WATCHING PBA LIVE">
+                <div class="content">
+                    <h2>WATCHING NBA</h2>
+                </div>
+            </div>
+			<div class="image-container">
+                <!-- PBA image with protected right-click -->
+                <img src="ML.jfif" class="yv no-right-click" alt="WATCHING PBA LIVE">
+                <div class="content">
+                    <h2>PLAYING MOBILE LEGENDS</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="dish">
+		<div class="header">MY FAVORITE DISHES</div>
+		<div class="main6">
+			<div class="image-container">
+                <!-- PBA image with protected right-click -->
+                <img src="sinigang.jpg" class="yv no-right-click" alt="WATCHING PBA LIVE">
+                <div class="content">
+                    <h2>SINIGANG NA BABOY</h2>
+                </div>
+            </div>
+			<div class="image-container">
+                <!-- PBA image with protected right-click -->
+                <img src="adobong manok.jpg" class="yv no-right-click" alt="WATCHING PBA LIVE">
+                <div class="content">
+                    <h2>ADOBONG BABOY</h2>
+                </div>
+            </div>
+		</div>
+	</div>
+	<div class="mymotto">
+		<div class="header">MY MOTTO IN LIFE</div>
+        <div class="main3">
+            <!-- Image with protected right-click -->
+            <img src="motto.png" class="yv no-right-click" alt="Young Vincent">
+            <div class="intro1" id="intro1">
+                <p style="text-indent: 50px;">
+                    This saying encourages me not to quit on what I want after failing. Winners are not perfect people who did good on their first try. Like everybody else, I experienced failure too but instead of quitting after a mistake, I strive again. I try best and I use the failures in order to be stronger and wiser. After learning from my mistakes, I become winners of life because I did not quit when things get tough. On the other hand, it says that quitters never win. It is as simple as it was said. Life is like a race and if you quit along the way, you will never reach the finish line that will make you a winner.
+                </p>	
+            </div>
+        </div>
+    </div>
+	<div class="last">
+		<div class="main7">
+			<div class="intro3" id="intro3">
+				<p style="text-indent: 50px;">Our interests help us identify our own strengths and flaws. Everyone has strengths and weaknesses. I believe that life is a learning experience, and that recognizing our own strengths and limitations may help us become better people in whatever we choose to accomplish, whether it is positive abilities and skills that can help us reach our goals or negative personal areas that require work. Knowing yourself and what you're capable of might help you identify and overcome your flaws. When I evaluate myself as a student, I discover that I have more strengths than faults. However, I am aware that allowing my shortcomings to take over makes me a lousy learner. As a student, I had several positive characteristics. I am a good student when I stay focused and make good use of my time. Overcoming my difficulties helps me become a better learner. In the IT field, my strengths are problem solver, creative, and hardworking because whenever I encounter a challenge when coding, I never give up trying to fix it and test my creativity. It has helped me come up with new ideas and methods of solving coding problems. One of my biggest strengths is a willingness to learn. While my limitations include public speaking and a lack of confidence due to shyness. My programming problem is that I am unable to construct a visually appealing and great website. One of my greatest weaknesses is being lazy sometimes.</p>
+			</div>
+		</div>
+	</div>
+    
+    <script>
+        function index() {
+            window.location.href = "index.html";
+        }
+
+        const menuIcon = document.querySelector('.menu-icon');
+        const navUl = document.querySelector('nav ul');
+
+        menuIcon.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            menuIcon.classList.toggle('fa-times');
+            menuIcon.classList.toggle('fa-bars');
+        });
+
+        // Disable right-click on images with class 'no-right-click'
+        const noRightClickImages = document.querySelectorAll('.no-right-click');
+        noRightClickImages.forEach(img => {
+            img.addEventListener('contextmenu', e => {
+                e.preventDefault();
+            });
+        });
+    </script>
+	<script>
+		//Testimonial Data
+		const testimonials = [
+		{
+			image: "quizgame.jfif",
+			testimonial:
+			"Once I reached the 11th grade, I spent three weeks immersing myself in the fundamentals. During this short period, I was able to utilize my growing knowledge of HTML, CSS, and JavaScript to construct a simple yet engaging quiz game. I was thoroughly amazed by my ability to bring this interactive application to life, which fueled an insatiable drive to continue expanding my programming skill set. From that point onward, I became increasingly captivated by the art of computer programming. The sense of accomplishment I felt after creating that first quiz game motivated me to persistently build upon my coding capabilities, exploring new languages and techniques along the way. This early experience truly marked a pivotal turning point in my academic and professional interests.",
+		},
+		{
+			image: "visual_basic.png",
+			testimonial:
+			"I discovered that when designing a basic quiz game with HTML, CSS, and JavaScript, I was inspired to learn additional programming languages besides the web-focused ones I had been learning. This encouraged me to learn more about Visual Basic, a language with a very different syntax and approach than HTML, CSS, and JavaScript. I was pleasantly surprised to discover that I actually enjoyed studying Visual Basic. The syntax and structure of the language looked far more intuitive and approachable to me than some of the other programming languages I'd definitely experienced. This made learning Visual Basic more natural and amazing. After having a good time with Visual Basic, I decided to continue my investigation of the language. I used the things I'd gained to create a simple ordering system application. This gave me hands-on experience developing real-world functionality using Visual Basic's features and capabilities. The process of planning and implementing this ordering system project was really rewarding. I used Visual Basic's user-friendly interface tools to design an intuitive and professional application interface. Furthermore, I discovered that the language's built-in data manipulation and processing capabilities made it reasonably simple to develop the essential ordering logic.",
+		},
+		{
+			image: "java.jfif",
+			testimonial:
+			"Being comfortable with programming languages such as Java would have been a key component of my study. An in-depth analysis of Java, from grammar to features and libraries, would have been an important component of my course. When I first discovered Java, I possibly found it difficult, as the language's difficult syntax and case-sensitivity can take some time to adjust to. However, my effort and attention to studying the language paid off as you learned more about its capabilities. One of the breakthroughs that attracted my interest was discovering the Java Swing library, which allows for the creation of graphical user interfaces. This realization opened up a whole new world of possibilities for me. Being able to create visually engaging and interactive applications, like my simple ordering system, not only showcased my programming skills but also allowed me to apply my knowledge in a more tangible and user-friendly way. The experience of creating the ordering system in both Java and Visual Basic was particularly valuable. It allowed me to compare and contrast the two languages, understand their respective strengths and weaknesses, and develop a more well-rounded perspective on software development. This type of comparative analysis is crucial for me, as it prepares them to work with a variety of technologies and adapt to different programming paradigms.",
+		},
+		{
+			image: "bos.jfif",
+			testimonial:
+			'As a second-year BSIT student, the opportunity to interact with my colleagues on real-world projects was an important part of my learning experience. When my classmate and I decided to work together to develop a Village Information System, I was able to use my programming talents while also performing a meaningful task. Building a <a href="https://barangaysagad.000webhostapp.com/index.php?fbclid=IwY2xjawDvaeZleHRuA2FlbQIxMAABHeh3bFkcmZpbvptfckLt-gZ8pR3PQf3E_wCGs9OIrIVmEyyhj8LLgMspdg_aem_JrtZMSbXRhR2QYxkOPNn0Q" style="color: #ff8906;">Barangay Information System</a> was a multifaceted project that tested my software engineering skills. From the initial stage of planning and design to actual implementation and deployment, my classmate and I would have worked together to negotiate complex projects. One of the most important parts of this collaborative effort was the need to combine the many programming languages and technologies I had studied, such as Java and Visual Basic, into a cohesive and functional system. This work requires me to apply my understanding of many programming paradigms, data structures, and algorithms to ensure smooth system operation. As I continue my studies at BSIT, this collaborative experience will certainly serve as a solid foundation for future projects, allowing me to utilize my technical ability, problem-solving skills, and talents in working together in more complex and meaningful situations.',
+		},
+		];
+
+		//Current Slide
+		let i = 0;
+		//Total Slides
+		let j = testimonials.length;
+
+		let testimonialContainer = document.getElementById("testimonial-container");
+		let nextBtn = document.getElementById("next");
+		let prevBtn = document.getElementById("prev");
+
+		nextBtn.addEventListener("click", () => {
+		i = (j + i + 1) % j;
+		displayTestimonial();
+		});
+		prevBtn.addEventListener("click", () => {
+		i = (j + i - 1) % j;
+		displayTestimonial();
+		});
+
+		let displayTestimonial = () => {
+		testimonialContainer.innerHTML = `
+			<p>${testimonials[i].testimonial}</p>
+			<img src=${testimonials[i].image}>
+		`;
+		};
+		window.onload = displayTestimonial;
+	</script>
+	<script>
+		const hoverImage = document.getElementById('hover-image');
+        const hoverText = document.getElementById('hoverText');
+
+        hoverImage.addEventListener('mouseenter', (e) => {
+            const hoverTextContent = e.target.getAttribute('data-hover-text');
+            hoverText.innerText = hoverTextContent;
+            hoverText.style.display = 'block';
+            hoverText.style.top = `${e.clientY + 10}px`;
+            hoverText.style.left = `${e.clientX + 10}px`;
+        });
+
+        hoverImage.addEventListener('mouseleave', () => {
+            hoverText.style.display = 'none';
+        });
+
+        hoverImage.addEventListener('mousemove', (e) => {
+            hoverText.style.top = `${e.clientY + 10}px`;
+            hoverText.style.left = `${e.clientX + 10}px`;
+        });
+
+		function bball() {
+			window.location.href = "bball_highlights.html";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<title>MY FAMILY</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Arial', sans-serif;
+		}
+		html {
+			scroll-behavior: smooth;
+		}
+		body {
+			background-color: #0f0e17;
+		}
+		body {
+			margin-top: 4rem;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+        }
+		body::-webkit-scrollbar {
+			display: none;
+		}
+		/* Navigation Bar Styles */
+		nav {
+            background-color: #ff8906;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li.active a {
+            background-color: #0f0e17; 
+            color: #ff8906; 
+        }
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: #0f0e17;
+            color: #ff8906;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
+        /* Responsive Styles */
+        @media screen and (max-width: 877px) {
+            .menu-icon {
+                display: block;
+                text-align: center;
+                place-content: center;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #ff8906;
+                padding: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: -1;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+            nav ul li a {
+                padding: 15px 10px;
+                width: 100%;
+            }
+			.my-parents {
+				flex-direction: column;
+				row-gap: 2rem;
+			}
+			.description-container p {
+				font-size: 20px;
+			}
+        }
+		@media screen and (max-width: 950px) {
+			.my-sib {
+				flex-direction: column;
+				row-gap: 2rem;
+			}
+			.description-container p {
+				font-size: 24px;
+			}
+			.container .header {
+				font-size: 3rem;
+			}
+		}
+		@media screen and (max-width: 500px) {
+			.box img, .fampic img {
+				max-width: 100%;
+				height: auto;
+				max-height: 500px;
+			}
+			.description-container p, .motto p {
+				font-size: 16px;
+			}
+			.container .header {
+				font-size: 2rem;
+			}
+			.motto h1 {
+				font-size: 1.5rem;
+			}
+		}
+		@media screen and (max-width: 300px) {
+			.container .header {
+				font-size: 1.1rem;
+			}
+			.description-container p, .motto p {
+				font-size: 15px;
+			}
+			.motto h1 {
+				font-size: 1.2rem;
+			}
+		}
+		.container {
+            width: 100%;
+            padding: 20px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 2rem;
+        }
+        .box, .fampic {
+            width: 100%;
+			max-width: 300px;
+            margin: 0 10px;
+            position: relative;
+            box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+            transition: 1s;
+            cursor: pointer;
+        }
+        .box img, .fampic img {
+            display: block;
+			width: 100%;
+			height: auto;
+            border-radius: 20px;
+        }
+        .box:hover {
+            transform: scale(1);
+            z-index: 2;
+        }
+        .description-container {
+            margin-top: 20px;
+            text-align: justify;
+            font-size: 26px;
+            color: #a7a9be;
+            width: 100%;
+            max-width: 650px;
+        }
+        .box-container {
+            display: flex;
+			justify-content: center;
+			align-items: center;
+            flex-direction: column;
+            row-gap: 2rem;
+        }
+        .my-parents, .my-sib {
+            display: flex;
+            column-gap: 1rem;
+        }
+		.motto {
+			text-align: center;
+			font-size: 2rem;
+			color: #fffffe;
+		}
+		.motto h1 {
+			margin-bottom: 10px;
+		}
+		.header {
+			position: relative;
+			font-family: sans-serif;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: 4rem;
+			letter-spacing: 4px;
+			overflow: hidden;
+			background: linear-gradient(90deg, #000, #fff, #000);
+			background-repeat: no-repeat;
+			background-size: 90%;
+			animation: animate 3s linear infinite;
+			background-clip: text;
+			-webkit-text-fill-color: rgba(255, 255, 255, 0);
+		}
+		@keyframes animate {
+			0% {
+				background-position: -500%;
+			}
+			100% {
+				background-position: 500%;
+			}
+		}
+	</style>
+</head>
+<body>
+    <nav>
+        <div class="logo" onclick="index()">Singk3t.</div>
+        <i class="fas fa-bars menu-icon"></i>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about_me.html">ABOUT ME</a></li>
+            <li class="active"><a href="my_family.html">MY FAMILY</a></li>
+            <li><a href="my_skills.html">MY SKILLS</a></li>
+            <li><a href="my_career.html">MY CAREER</a></li>
+        </ul>
+    </nav>
+	<div class="container">
+		<div class="header">MY FAMILY MEMBERS</div>
+        <div class="my-parents">
+            <div class="box-container">
+                <div class="box" onmouseover="showDescription('My mother is an wonderful mother to me and my to siblings. My mother is my pride, she loves and protects us always. She is always ready to give more sacrifices for her family. She is our best friend. She always listens and helps us to solve our problems. She is always concerned for everything about us including our health, food and our studies. She is our great motivation. She always helps us in all our goals and tasks of our life. Our parents are great because play an important role in our mental, physical, social, financial and career development.')" onmouseout="clearDescription()">
+                    <img src="withnanay.jpg" alt="" class="no-right-click">
+                </div>
+                <div class="description-container">
+                    <p id="description"></p>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box" onmouseover="showDescription1(' My father is an amazing father to me and my to siblings. He always accompanied us to go in our school. He is always willing to help us in our studies. He is the person in our family who is closest to me because he trained me how to play basketball. When I was young, he always ready to support my game because he want to see my improvement everyday. Me and my father loves to watch PBA games in live and in TV, also we loves to play basketball every weekends. He never gets tired of teaching me as well as teaching us how to be good children and how to good to others.')" onmouseout="clearDescription1()">
+                    <img src="withtatay.jpg" alt="" class="no-right-click">
+                </div>
+                <div class="description-container">
+                    <p id="description1"></p>
+                </div>
+            </div>
+        </div>
+        <div class="my-sib">
+            <div class="box-container">
+                <div class="fampic">
+                    <img src="fampic.jpg" alt="" class="no-right-click">
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box" onmouseover="showDescription3('My sisters are the best motivation to me. It is not every day that we get along but when we do then it is a good day. Every day they make me want do better, not only for myself but for my mom and them also. They encourage me to do better now so that my future is bright later on.')" onmouseout="clearDescription3()">
+                    <img src="withmysiblings.jpg" alt="" class="no-right-click">
+                </div>
+                <div class="description-container">
+                    <p id="description3"></p>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="fampic">
+                    <img src="fam.jpg" alt="" class="no-right-click">
+                </div>
+            </div>
+        </div>
+		<div class="motto">
+			<h1>"The Family that Eat Together, Stay Together"</h1>
+			<p>-ENRIQUEZ FAMILY-</p>
+		</div>
+    </div>
+</body>
+</html>
+<script>
+	var image = document.getElementById('')
+	function showDescription(description) {
+		document.getElementById('description').textContent = description;
+	}
+	function clearDescription() {
+		document.getElementById('description').textContent = '';
+	}
+	function showDescription1(description) {
+		document.getElementById('description1').textContent = description;
+	}
+	function clearDescription1() {
+		document.getElementById('description1').textContent = '';
+	}
+	function showDescription2(description) {
+		document.getElementById('description2').textContent = description;
+	}
+	function clearDescription2() {
+		document.getElementById('description2').textContent = '';
+	}
+	function showDescription3(description) {
+		document.getElementById('description3').textContent = description;
+	}
+	function clearDescription3() {
+		document.getElementById('description3').textContent = '';
+	}
+	function showDescription4(description) {
+		document.getElementById('description4').textContent = description;
+	}
+	function clearDescription4() {
+		document.getElementById('description4').textContent = '';
+	}
+</script>
+<script>
+	const menuIcon = document.querySelector('.menu-icon');
+    const navUl = document.querySelector('nav ul');
+	
+	menuIcon.addEventListener('click', () => {
+		navUl.classList.toggle('active');
+        menuIcon.classList.toggle('fa-times');
+        menuIcon.classList.toggle('fa-bars');
+    });
+	
+	const noRightClickImages = document.querySelectorAll('.no-right-click');
+    noRightClickImages.forEach(img => {
+		img.addEventListener('contextmenu', e => {
+			e.preventDefault();
+		});
+	});
+</script>
+
