@@ -275,7 +275,7 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Singk3t.</div>
+        <div class="logo" onclick="index()">Singk3t.</div>
         <i class="fas fa-bars menu-icon"></i>
         <ul>
             <li><a href="index.html">HOME</a></li>
@@ -377,4 +377,9 @@
 		menuIcon.classList.toggle('fa-times');
 		menuIcon.classList.toggle('fa-bars');
 	});
+</script>
+<script>
+	function index() {
+            window.location.href = "index.html";
+        }
 </script>
