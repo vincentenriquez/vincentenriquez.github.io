@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css?family=Epilogue:400,700&display=swap');
+html {
+	scroll-behavior: smooth;
+}
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+body {
+	background-color: #0f0e17;
+	margin-top: 4rem;
+}
+.about, .myhobbies, .mymotto, .exp, .sporty, .dish, .last {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.myhobbies, .mymotto, .exp, .dish, .last {
+	flex-direction: column;
+}
+.myhobbies h1 {
+	text-align: center;
+	padding: 1rem;
+}
+.main1, .main2, .main3, .main5, .main6, .main7 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	gap: 2rem;
+}
+.main4 {
+	display: flex;
+	flex-direction: column;
+}
+.main2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.header {
+	color: #000;
+	font-size: 4rem;
+	font-weight: 1000;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, pink 67%, cyan 100%);
+	background-size: auto auto;
+	background-clip: border-box;
+	background-size: 200% auto;
+	color: #fff;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textclip 3s linear infinite;
+	display: inline-block;
+}
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+@media (max-width: 992px) {
+    .main2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+	.main6 {
+		flex-direction: column;
+	}
+}
+@media (max-width: 600px) {
+    .main2 {
+        grid-template-columns: 1fr;
+    }
+	#intro, #intro1, #intro2, #intro3 {
+		font-size: 20px;
+	}
+	.testimonial-container p {
+		font-size: 20px !important;
+	}
+}	
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+.image-container:hover img {
+    transform: scale(1.1);
+}
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover .content {
+    opacity: 1;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.intro {
+    width: 100%;
+    max-width: 800px;
+	text-align: justify;
+	font-size: 26px;
+	color: #a7a9be;
+}
+.intro1 {
+	width: 100%;
+    max-width: 800px;
+	text-align: justify;
+	font-size: 26px;
+	color: #a7a9be;
+}
+.intro2 {
+	width: 100%;
+    max-width: 900px;
+	text-align: justify;
+	font-size: 26px;
+	color: #a7a9be;
+}
+.intro3 {
+	width: 100%;
+	text-align: justify;
+	font-size: 26px;	
+	color: #a7a9be;
+}
+@media (max-width: 1120px) {
+	.main3, .main5 {
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+}
+.main1 img {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px; /* Optional: Set a max-height to prevent image from becoming too tall */
+}
+.mymotto img {
+    max-width: 80%;
+    height: auto;
+    max-height: 400px; /* Optional: Set a max-height to prevent image from becoming too tall */
+}
+.main5 img {
+	max-width: 100%;
+    height: auto;
+    max-height: 600px; /* Optional: Set a max-height to prevent image from becoming too tall */
+}
+#hover-image {
+	display: block;
+	cursor: pointer;
+}
+
+/* Navigation Bar Styles */
+nav {
+	background-color: #ff8906;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease;
+}
+
+.logo {
+	color: white;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 10px 0;
+	transition: color 0.3s ease;
+	cursor: pointer;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+nav ul li {
+	margin-right: 20px;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	padding: 10px 15px;
+	border-radius: 3px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li.active a {
+	background-color: #0f0e17; 
+	color: #ff8906; 
+}
+
+nav ul li a:hover, nav ul li a:focus {
+	background-color: #0f0e17;
+	color: #ff8906;
+}
+
+.menu-icon {
+	display: none;
+	font-size: 1.8rem;
+	color: white;
+	cursor: pointer;
+}
+
+@media (max-width: 877px) {
+	.menu-icon {
+		display: block;
+		text-align: center;
+		place-content: center;
+	}
+	nav ul {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		background-color: #ff8906;
+		padding: 10px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		z-index: -1;
+	}
+	nav ul.active {
+		display: flex;
+	}
+	nav ul li {
+		width: 100%;
+		text-align: center;
+		margin: 10px 0;
+	}
+	nav ul li a {
+		padding: 15px 10px;
+		width: 100%;
+	}
+	.main1, .main5 {
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+	.header {
+        font-size: 3rem;
+    }
+	.intro, .intro1, .intro2, .intro3 {
+		font-size: 25px;
+	}
+	#testimonial-container {
+		padding: 15px;
+	}
+	#testimonial-container p {
+		font-size: 25px;
+	}
+}
+@media only screen and (max-width: 300px) {
+	p {
+		font-size: 10px;
+	}
+	.main4 #testimonial-container p {
+		font-size: 10px !important;
+	}
+	.exp .header, .myhobbies .header, .dish .header, .mymotto .header {
+		font-size: 1rem;
+		margin-bottom: 10px;
+	}
+	.main1, .main2, .main3, .main5, .main6, .main7 {
+		padding: 0px;
+	}
+	.exp .main4 {
+		padding: 0px;
+	}
+	.about, .myhobbies, .mymotto {
+		padding: 20px;
+	}
+	.content h2 {
+		font-size: 1rem;
+	}
+	.main1 img {
+		max-height: 200px; /* Optional: Set a max-height to prevent image from becoming too tall */
+	}
+}
+.testimonial-container {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	padding: 20px;	
+}
+.testimonial-container p {
+	font-size: 26px;
+	color: #a7a9be;
+	margin: 0 0 10px;
+	text-align: justify;
+	text-indent: 50px;
+}
+.testimonial-container img {
+	max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Optional: Set a max-height to prevent image from becoming too tall */
+	object-fit: cover;
+	margin: 10px auto;
+}
+.main4 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border-radius: 10px;
+}
+.main4 button {
+	background: #ff8906;
+	border: none;
+	color: white;
+	font-size: 1.5rem;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+.main4 button:hover {
+	background: #e67805;
+}
+.main4 button:focus {
+	outline: none;
+}
+@media (max-width: 768px) {
+	.intro, .intro1, .intro2, .intro3 {
+		font-size: 23px;
+	}
+	#testimonial-container {
+		padding: 10px;
+	}
+	#testimonial-container p {
+		font-size: 23px;
+	}
+}
+@media (max-width: 480px) {
+	#testimonial-container {
+		padding: 0px;
+	}
+	#intro, #intro1, #intro2, #intro3 {
+		font-size: 16px;
+	}
+	#testimonial-container p {
+		font-size: 16px !important;
+	}
+	.main1, .main2, .main3, .main5, .main6, .main7 {
+		padding: 0px;
+	}
+	.exp .main4 {
+		padding: 0px;
+	}
+	.header {
+		font-size: 2rem;
+	}
+}
+.hover-text {
+    position: fixed; /* Use fixed positioning to follow the cursor */
+    color: black;
+    padding: 5px;
+	font-weight: 900;
+    border-radius: 3px;
+    pointer-events: none; /* Prevent text from interfering with cursor events */
+    display: none; /* Hide the text by default */
+    z-index: 10000; /* Ensure the text appears above other elements */
+}
+.mydish {
+	display: flex;
+	column-gap: 1rem;
+}
+.mydish img {
+	max-width: 100%;
+    height: auto;
+    max-height: 500px; /* Optional: Set a max-height to prevent image from becoming too tall */
+}
